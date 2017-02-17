@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<!-- 常量配置 -->
+    <constant name="struts.i18n.reload" value="false" />
+    <!-- 是否开启动态方法调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <!-- 是否开启开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="false" />
+    <!-- 指定全局国际化资源文件 -->
+    <constant name="struts.custom.i18n.resources" value="mess" />
+	<!-- Struts2的所有Action都需要位于package下面 -->
+	<package name="strutsdemo" extends="struts-default">
+		<!-- 定义名为login的Action，其实现类为LoginAction -->
+		<action name="login" class="com.belstar.action.LoginAction">
+			<!-- 处理返回error，对应/error.jsp -->
+			<result name="error">/error.jsp</result>
+			<!-- 如果返回success,对应/welcome.jsp -->
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+</struts>
